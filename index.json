@@ -5,7 +5,7 @@
         "versions": [
             {
                 "version": "1.0.0",
-                "url": ""
+                "url": "https://raw.githubusercontent.com/tomkerswill/tapformsrepository/main/importToNewColumns.js"
             }
         ]
     },
