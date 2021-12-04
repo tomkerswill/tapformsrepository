@@ -14,6 +14,7 @@
 document.getFormNamed('Script Manager').runScriptNamed('Logger');
 
 function importToNewColumns(form, uri, indexKey) {
+    const indexKeyId = form.getFieldNamed(indexKey).getId();
 
     const jsonFile = uri;
     //    `	console.log("File: " + jsonFile);
