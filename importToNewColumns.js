@@ -1,6 +1,6 @@
 // ========== importToNewColumns Start ========== //
 // NAME: importToNewColumns
-// VERSION: 1.0
+// VERSION: 1.0.1
 
 /**
  * Imports a file and adds the right columns
