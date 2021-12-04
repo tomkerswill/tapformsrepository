@@ -13,10 +13,10 @@
 
 document.getFormNamed('Script Manager').runScriptNamed('Logger');
 
-function importToNewColumns(filename, indexKey) {
+function importToNewColumnsd(uri, indexKey) {
+    const jsonFile = uri;
 
-	let jsonFile = "file://" + filename;
-	console.log("File: " + jsonFile);
+    `	console.log("File: " + jsonFile);
 	console.log("Getting json");
 
 	let rowList = Utils.getJsonFromUrl(jsonFile);
