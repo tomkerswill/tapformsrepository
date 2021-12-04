@@ -1,6 +1,6 @@
 // ========== importToNewColumns Start ========== //
 // NAME: importToNewColumns
-// VERSION: 1.0.2
+// VERSION: 1.0.3
 
 /**
  * Imports a file and adds the right columns
@@ -13,7 +13,7 @@
 
 document.getFormNamed('Script Manager').runScriptNamed('Logger');
 
-function importToNewColumns(uri, indexKey) {
+function importToNewColumns(form, uri, indexKey) {
 
     const jsonFile = uri;
     //    `	console.log("File: " + jsonFile);
