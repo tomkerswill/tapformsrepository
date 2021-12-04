@@ -17,8 +17,6 @@ function importToNewColumns(form, uri, indexKey) {
     const indexKeyId = form.getFieldNamed(indexKey).getId();
 
     const jsonFile = uri;
-    //    `	console.log("File: " + jsonFile);
-    //	console.log("Getting json");
 
 	let rowList = Utils.getJsonFromUrl(jsonFile);
 	
@@ -28,31 +26,34 @@ function importToNewColumns(form, uri, indexKey) {
 	}
 		
 	for (row of rowList) {
-		console.log("Row: " + JSON.stringify(row))
-		let rowId = row[indexKey];	
-		console.log("Row Id: " + rowId)
-		let targetRecord = 	getRecordFromFormWithKey(form.name,indexKeyId, rowId);
-		if (!targetRecord) {
-			console.log("Adding new record...");
-			targetRecord = form.addNewRecord();
+	    console.log("Row: " + JSON.stringify(row))
+	    let rowId = row[indexKey];	
+	    console.log("Row Id: " + rowId);
+	    console.log("Index Key Id: " + indexKeyId);
+	    console.log("Name: " + form.name);
+	    let targetRecord = getRecordFromFormWithKey(form.name,indexKeyId, rowId);
+	    if (!targetRecord) {
+		console.log("Adding new record...");
+		targetRecord = form.addNewRecord();
+	    }
+	    console.log("Record: " + targetRecord.getId());
+	    for (const [key, value] of Object.entries(row)) {
+		let keyField = form.getFieldNamed(key);
+		if (!keyField) {				
+		    console.log("Adding field: " + key + "Type: " + typeof(value));
+		    if (typeof(value) == "number") {
+			fieldType = "number";
+		    }
+		    else {
+			fieldType = "text"
+		    }
+		    keyField = form.addNewFieldNamedWithType(key,fieldType);
+		    form.saveAllChanges();
 		}
-		console.log("Record: " + targetRecord.getId());
-		for (const [key, value] of Object.entries(row)) {  			let keyField = form.getFieldNamed(key);
-			if (!keyField) {				
-				console.log("Adding field: " + key + "Type: " + typeof(value));
-				if (typeof(value) == "number") {
-				fieldType = "number";
-				}
-				else {
-				fieldType = "text"
-				}
-				keyField = form.addNewFieldNamedWithType(key,fieldType);
-				form.saveAllChanges();
-			}
-			keyId = keyField.getId();
-  			console.log("Key: " + key + " keyId: " + keyId + " Value: " + value);
-  			targetRecord.setFieldValue(keyId, value);
-		}
+		keyId = keyField.getId();
+  		console.log("Key: " + key + " keyId: " + keyId + " Value: " + value);
+  		targetRecord.setFieldValue(keyId, value);
+	    }
 	}
 	form.saveAllChanges();
 }

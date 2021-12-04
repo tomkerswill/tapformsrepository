@@ -1,4 +1,4 @@
-[
+ [
     {
         "name": "importToNewColumns",
         "description": "Imports by creating columns.",
@@ -17,6 +17,10 @@
             },
 	    {
                 "version": "1.0.4",
+                "url": "https://raw.githubusercontent.com/tomkerswill/tapformsrepository/main/importToNewColumns.js"
+            }	    ,
+	    {
+                "version": "1.0.5",
                 "url": "https://raw.githubusercontent.com/tomkerswill/tapformsrepository/main/importToNewColumns.js"
             }	    
         ]
