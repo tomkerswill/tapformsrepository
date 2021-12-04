@@ -22,7 +22,11 @@
 	    {
                 "version": "1.0.5",
                 "url": "https://raw.githubusercontent.com/tomkerswill/tapformsrepository/main/importToNewColumns.js"
-            }	    
+            },
+	    {
+                "version": "1.0.6",
+                "url": "https://raw.githubusercontent.com/tomkerswill/tapformsrepository/main/importToNewColumns.js"
+            }	    	    
         ]
     } 
 ]

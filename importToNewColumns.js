@@ -14,7 +14,9 @@
 document.getFormNamed('Script Manager').runScriptNamed('Logger');
 
 function importToNewColumns(form, uri, indexKey) {
+    console.log("Index Key: " + indexKey);
     const indexKeyId = form.getFieldNamed(indexKey).getId();
+    console.log("Index Key Id: " + indexKeyId);
 
     const jsonFile = uri;
 
@@ -29,7 +31,6 @@ function importToNewColumns(form, uri, indexKey) {
 	    console.log("Row: " + JSON.stringify(row))
 	    let rowId = row[indexKey];	
 	    console.log("Row Id: " + rowId);
-	    console.log("Index Key Id: " + indexKeyId);
 	    console.log("Name: " + form.name);
 	    let targetRecord = getRecordFromFormWithKey(form.name,indexKeyId, rowId);
 	    if (!targetRecord) {
