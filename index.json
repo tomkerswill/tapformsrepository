@@ -4,7 +4,7 @@
         "description": "Imports by creating columns.",
         "versions": [
             {
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "url": "https://raw.githubusercontent.com/tomkerswill/tapformsrepository/main/importToNewColumns.js"
             }
         ]
